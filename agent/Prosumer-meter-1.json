@@ -1,0 +1,33 @@
+{
+	"adapter-id": "adapter-dummy",
+	"name": "Prosumer-meter-1",
+	"type": "adapters:PowerMeter",
+	"actions" : [],
+  "events": [],
+	"properties": [
+    {
+        "pid" : "InverterPVActualActivePower",
+        "read_link" : {
+            "output" : {
+                "field" : [
+                    {
+                        "schema" : {
+                            "type" : "integer"
+                        },
+                        "name" : "value"
+                    },
+                    {
+                        "schema" : {
+                            "type" : "string"
+                        },
+                        "name" : "production"
+                    }
+                ],
+                "type" : "object"
+            },
+            "href" : "/objects/{oid}/actions/{pid}"
+        },
+        "monitors" : "adapters:InverterPVActualActivePower"
+    }
+  ]
+}

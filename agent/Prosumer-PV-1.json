@@ -1,0 +1,116 @@
+{
+	"adapter-id": "adapter-dummy",
+	"name": "Prosumer-PV-1",
+	"type": "adapters:PhotovoltaicPanel",
+	"located-in": [
+		{
+				"location_type": "s4city:City",
+				"label": "Bratislava",
+				"location_id": "http://dbpedia.org/page/Bratislava"
+		}
+	],
+	"actions" : [],
+  "events": [],
+	"properties": [
+    {
+        "pid" : "InverterPVActualActivePower",
+        "read_link" : {
+            "output" : {
+                "field" : [
+                    {
+                        "schema" : {
+                            "type" : "integer"
+                        },
+												"predicate": "core:value",
+                        "name" : "value"
+                    },
+                    {
+                        "schema" : {
+                            "type" : "string"
+                        },
+                        "name" : "production"
+                    }
+                ],
+                "type" : "object"
+            },
+            "href" : "/objects/{oid}/actions/{pid}"
+        },
+        "monitors" : "adapters:InverterPVActualActivePower"
+    },
+    {
+        "pid" : "PvInstalledCapacity",
+        "read_link" : {
+            "output" : {
+                "field" : [
+                    {
+                        "schema" : {
+                            "type" : "integer"
+                        },
+												"predicate": "core:value",
+                        "name" : "value"
+                    },
+                    {
+                        "schema" : {
+                            "type" : "string"
+                        },
+                        "name" : "capacity"
+                    }
+                ],
+                "type" : "object"
+            },
+            "href" : "/objects/{oid}/actions/{pid}"
+        },
+        "monitors" : "adapters:PVInstalledCapacity"
+    },
+    {
+        "pid" : "InverterConsumerActivePowerLoad",
+        "read_link" : {
+            "output" : {
+                "field" : [
+                    {
+                        "schema" : {
+                            "type" : "integer"
+                        },
+												"predicate": "core:value",
+                        "name" : "value"
+                    },
+                    {
+                        "schema" : {
+                            "type" : "string"
+                        },
+                        "name" : "consumption"
+                    }
+                ],
+                "type" : "object"
+            },
+            "href" : "/objects/{oid}/actions/{pid}"
+        },
+        "monitors" : "adapters:InverterConsumerActivePowerLoad"
+    },
+    {
+        "pid" : "ActivePowerAbsorbedFromGrid",
+        "read_link" : {
+            "output" : {
+                "field" : [
+                    {
+                        "schema" : {
+                            "type" : "integer"
+                        },
+												"predicate": "core:value",
+                        "name" : "value"
+                    },
+                    {
+                        "schema" : {
+                            "type" : "string"
+                        },
+                        "name" : "consumption"
+                    }
+                ],
+                "type" : "object"
+            },
+            "href" : "/objects/{oid}/actions/{pid}"
+        },
+        "monitors" : "adapters:ActivePowerAbsorbedFromGrid"
+    }
+  ]
+}
