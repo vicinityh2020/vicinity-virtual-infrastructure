@@ -3,19 +3,16 @@ services:
   gateway-api:
     networks:
       vicinity:
-#        ipv4_address: 10.6.0.5 
     volumes:
     - ./logs/gateway-dev:/gateway/log
     - ./configuration/GatewayConfig.xml:/gateway/config/GatewayConfig.xml:rw
     container_name: vicinity-gateway-api
     ports:
     - 8181:8181
-    #image: gtw-api:latest
     image: bavenir/vicinity-gateway-api:latest
   device-dummy:
     networks:
       vicinity:
-#        ipv4_address: 10.6.0.10
     volumes:
     - ./logs/dev-logs:/home/app/logs
     - ./agent:/home/app/agent
@@ -27,6 +24,3 @@ services:
 networks:
   vicinity:
     driver: bridge
-#    ipam:
-#      config:
-#      - subnet: 10.6.0.0/16
